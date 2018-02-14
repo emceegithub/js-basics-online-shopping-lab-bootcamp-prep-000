@@ -13,7 +13,7 @@ function addToCart(item) {
   var newItem = {}
   newItem[item] = Math.floor(Math.random()*101)
   cart.push(newItem)
-  console.log(item + " has been added to your cart")
+  console.log(item + " has been added to your cart.")
 }
 
 function viewCart() {
