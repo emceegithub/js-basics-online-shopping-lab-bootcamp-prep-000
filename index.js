@@ -18,7 +18,18 @@ function addToCart(item) {
 }
 
 function viewCart() {
-  // write your code here
+  var message = "In your cart, you have "
+  var lastIndex = cart.length-1
+  var lastObject = cart[lastIndex]
+  var lastKey = Object.keys(lastObject)
+  var lastKeyValue = lastObject[lastKey]
+  for (var i=0;i<cart.length-1;i++) {
+    for (var key in cart[i]) {
+      message = message + key + " at $" + cart[i][key] + ", "
+    }
+  }
+  message = message + "and " + lastKey + " at $" + lastKeyValue + "."
+  console.log(message)
 }
 
 function total() {
