@@ -53,7 +53,23 @@ function total() {
 }
 
 function removeFromCart(item) {
-  // write your code here
+  getCart()
+  var itemIsFound = false
+  for (var i=0;i<cart.length;i++) {
+    var currentKey = Object.keys(cart[i])[0]
+    for (var key in cart[i]) {
+      if (currentKey == item) {
+        cart.splice(i,1)
+        itemIsFound = true
+      } else {
+        //do nothing
+      }
+    }
+  }
+  if (itemIsFound == false) {
+    console.log("That item is not in your cart.")
+  }
+  return cart
 }
 
 function placeOrder(cardNumber) {
