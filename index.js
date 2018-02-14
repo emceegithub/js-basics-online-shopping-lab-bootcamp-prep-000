@@ -18,10 +18,16 @@ function addToCart(item) {
 }
 
 function viewCart() {
-  if (cart.length === 0) {
+  var message = "In your cart, you have "
+  if (cart.length == 0) {
     console.log("Your shopping cart is empty.")
+  } else if (cart.length == 1) {
+    message = message + Object.keys(cart[0]) + " at $" + cart[0][Object.keys(cart[0])] + "."
+    console.log(message)
+  } else if (cart.length == 2) {
+    message = message + Object.keys(cart[0]) + " at $" + cart[0][Object.keys(cart[0])] + " and " + Object.keys(cart[1]) + " at $" + cart[1][Object.keys(cart[1])] + "."
+    console.log(message)
   } else {
-    var message = "In your cart, you have "
     var lastIndex = cart.length-1
     var lastObject = cart[lastIndex]
     var lastKey = Object.keys(lastObject)
